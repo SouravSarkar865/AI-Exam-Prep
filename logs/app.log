@@ -1,0 +1,591 @@
+2024-11-29 12:28:57,953 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 12:28:58,667 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 12:28:58,667 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 12:29:03,628 - rag.document_store - INFO - Creating new FAISS index
+2024-11-29 12:29:03,692 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 12:29:03,692 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 12:29:04,177 - pdf_processor.extractor - INFO - Successfully extracted 50 pages of text
+2024-11-29 12:29:04,183 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 12:29:04,183 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 12:31:51,410 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 12:31:52,195 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 12:31:52,195 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 12:31:58,132 - rag.document_store - INFO - Loading existing FAISS index
+2024-11-29 12:31:58,139 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 12:31:58,139 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 12:31:58,637 - pdf_processor.extractor - INFO - Successfully extracted 50 pages of text
+2024-11-29 12:31:58,645 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 12:31:58,645 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 12:52:33,288 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 12:52:40,479 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 12:52:40,480 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:33:06,489 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:33:12,165 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:33:12,165 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:33:12,727 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 13:33:12,727 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:33:16,904 - rag.document_store - INFO - Loading existing FAISS index
+2024-11-29 13:33:16,904 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:33:17,132 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:33:17,132 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 13:33:17,132 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 13:33:17,487 - pdf_processor.extractor - INFO - Successfully extracted 50 pages of text
+2024-11-29 13:33:17,493 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 13:33:17,493 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:33:18,006 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:33:18,006 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 13:33:18,006 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:33:18,559 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:33:18,559 - topic_extraction.topic_extractor - INFO - Attempting to connect to Ollama at http://localhost:11434/api/generate
+2024-11-29 13:33:18,559 - topic_extraction.topic_extractor - INFO - Sending prompt of size: 3588 characters
+2024-11-29 13:33:20,036 - topic_extraction.topic_extractor - INFO - Received response with status code: 200
+2024-11-29 13:33:20,036 - topic_extraction.topic_extractor - INFO - Successfully extracted 8 topics
+2024-11-29 13:33:20,036 - __main__ - INFO - Successfully generated 8 topics
+2024-11-29 13:33:20,036 - __main__ - INFO - Setting up RAG pipeline...
+2024-11-29 13:33:20,036 - embeddings.embedding_manager - INFO - Generating embeddings for 95 texts
+2024-11-29 13:33:20,036 - embeddings.embedding_manager - ERROR - Error in batch embedding generation: name 'torch' is not defined
+2024-11-29 13:33:20,036 - embeddings.embedding_manager - ERROR - Error generating embeddings: name 'torch' is not defined
+2024-11-29 13:33:20,036 - __main__ - ERROR - Failed to setup RAG pipeline: name 'torch' is not defined
+2024-11-29 13:33:20,036 - __main__ - ERROR - Pipeline failed: name 'torch' is not defined
+2024-11-29 13:33:20,036 - root - ERROR - Pipeline execution failed: name 'torch' is not defined
+Traceback (most recent call last):
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 241, in main
+    topics_data, questions_data = pipeline.run()
+                                  ^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 209, in run
+    self.setup_rag_pipeline(chunks)
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 133, in setup_rag_pipeline
+    embeddings = self.embedding_manager.generate_embeddings(chunks)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/embeddings/embedding_manager.py", line 79, in generate_embeddings
+    batch_embeddings = self._generate_batch_embeddings(batch)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/embeddings/embedding_manager.py", line 103, in _generate_batch_embeddings
+    with torch.no_grad():
+         ^^^^^
+NameError: name 'torch' is not defined
+2024-11-29 13:34:09,600 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:34:10,292 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:34:10,292 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:34:10,702 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 13:34:10,703 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:34:13,781 - rag.document_store - INFO - Loading existing FAISS index
+2024-11-29 13:34:13,781 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:34:14,285 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:34:14,285 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 13:34:14,285 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 13:34:14,640 - pdf_processor.extractor - INFO - Successfully extracted 50 pages of text
+2024-11-29 13:34:14,645 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 13:34:14,645 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:34:16,478 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:34:16,478 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 13:34:16,478 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:34:16,867 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:34:16,867 - topic_extraction.topic_extractor - INFO - Attempting to connect to Ollama at http://localhost:11434/api/generate
+2024-11-29 13:34:16,867 - topic_extraction.topic_extractor - INFO - Sending prompt of size: 3588 characters
+2024-11-29 13:34:18,482 - topic_extraction.topic_extractor - INFO - Received response with status code: 200
+2024-11-29 13:34:18,482 - topic_extraction.topic_extractor - INFO - Successfully extracted 9 topics
+2024-11-29 13:34:18,482 - __main__ - INFO - Successfully generated 9 topics
+2024-11-29 13:34:18,482 - __main__ - INFO - Setting up RAG pipeline...
+2024-11-29 13:34:18,482 - embeddings.embedding_manager - INFO - Generating embeddings for 95 texts
+2024-11-29 13:34:19,210 - rag.document_store - INFO - Saved index to data/vector_store/faiss_index.bin
+2024-11-29 13:34:19,210 - rag.document_store - INFO - Added 95 documents to the store
+2024-11-29 13:34:19,210 - __main__ - INFO - RAG pipeline setup completed successfully
+2024-11-29 13:34:19,210 - __main__ - INFO - Generating questions for topics...
+2024-11-29 13:34:19,210 - rag.retriever - INFO - Retrieving contexts for topic: Project Definition
+2024-11-29 13:34:19,210 - rag.retriever - ERROR - Error generating embedding: 'DocumentStore' object has no attribute 'embedding_manager'
+2024-11-29 13:34:19,210 - rag.retriever - ERROR - Error retrieving contexts: 'DocumentStore' object has no attribute 'embedding_manager'
+2024-11-29 13:34:19,210 - __main__ - ERROR - Failed to generate questions: 'DocumentStore' object has no attribute 'embedding_manager'
+2024-11-29 13:34:19,210 - __main__ - ERROR - Pipeline failed: 'DocumentStore' object has no attribute 'embedding_manager'
+2024-11-29 13:34:19,210 - root - ERROR - Pipeline execution failed: 'DocumentStore' object has no attribute 'embedding_manager'
+Traceback (most recent call last):
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 241, in main
+    topics_data, questions_data = pipeline.run()
+                                  ^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 212, in run
+    questions_data = self.generate_questions(topics_data["main_topics"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 166, in generate_questions
+    contexts = self.rag_retriever.get_relevant_contexts(topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/rag/retriever.py", line 58, in get_relevant_contexts
+    embedding = self._get_embedding(search_text)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/rag/retriever.py", line 97, in _get_embedding
+    return self.document_store.embedding_manager.generate_embeddings(text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DocumentStore' object has no attribute 'embedding_manager'
+2024-11-29 13:39:37,266 - __main__ - INFO - Initializing pipeline components...
+2024-11-29 13:39:37,266 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:39:40,212 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:39:40,213 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:39:40,610 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 13:39:40,610 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:39:44,030 - rag.document_store - INFO - Loading existing FAISS index
+2024-11-29 13:39:44,031 - __main__ - INFO - Pipeline initialization completed successfully
+2024-11-29 13:39:44,031 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:39:45,376 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:39:45,376 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 13:39:45,376 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 13:39:45,724 - pdf_processor.extractor - INFO - Successfully extracted 50 pages of text
+2024-11-29 13:39:45,730 - __main__ - INFO - Created 95 text chunks
+2024-11-29 13:39:45,730 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 13:39:45,730 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:39:49,300 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:39:49,301 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 13:39:49,301 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:39:51,176 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:39:51,176 - topic_extraction.topic_extractor - INFO - Attempting to connect to Ollama at http://localhost:11434/api/generate
+2024-11-29 13:39:51,176 - topic_extraction.topic_extractor - INFO - Sending prompt of size: 3588 characters
+2024-11-29 13:39:52,905 - topic_extraction.topic_extractor - INFO - Received response with status code: 200
+2024-11-29 13:39:52,906 - topic_extraction.topic_extractor - INFO - Successfully extracted 10 topics
+2024-11-29 13:39:52,906 - __main__ - INFO - Successfully extracted 10 topics
+2024-11-29 13:39:52,906 - __main__ - INFO - Setting up RAG pipeline...
+2024-11-29 13:39:52,906 - embeddings.embedding_manager - INFO - Generating embeddings for 95 texts
+2024-11-29 13:39:53,553 - rag.document_store - INFO - Saved index to data/vector_store/faiss_index.bin
+2024-11-29 13:39:53,554 - rag.document_store - INFO - Added 95 documents to the store
+2024-11-29 13:39:53,554 - __main__ - INFO - RAG pipeline setup completed successfully
+2024-11-29 13:39:53,554 - __main__ - INFO - Starting question generation process...
+2024-11-29 13:39:53,554 - rag.retriever - INFO - Retrieving contexts for topic: Project Definition
+2024-11-29 13:39:53,554 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 13:39:53,567 - rag.document_store - ERROR - Error during search: list index out of range
+2024-11-29 13:39:53,567 - rag.retriever - ERROR - Error retrieving contexts: list index out of range
+2024-11-29 13:39:53,567 - __main__ - ERROR - Question generation failed: list index out of range
+2024-11-29 13:39:53,567 - __main__ - ERROR - Pipeline execution failed: list index out of range
+2024-11-29 13:39:53,567 - root - ERROR - Pipeline execution failed: list index out of range
+Traceback (most recent call last):
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 293, in main
+    topics_data, questions_data = pipeline.run()
+                                  ^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 261, in run
+    questions_data = self.generate_questions(topics_data["main_topics"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 214, in generate_questions
+    contexts = self.rag_retriever.get_relevant_contexts(topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/rag/retriever.py", line 61, in get_relevant_contexts
+    results = self.document_store.search(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/rag/document_store.py", line 163, in search
+    'document': self.documents[idx],
+                ~~~~~~~~~~~~~~^^^^^
+IndexError: list index out of range
+2024-11-29 13:43:17,245 - __main__ - INFO - Initializing pipeline components...
+2024-11-29 13:43:17,245 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:43:17,960 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:43:17,960 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:43:18,356 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 13:43:18,356 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:43:21,471 - rag.document_store - INFO - Loading existing FAISS index
+2024-11-29 13:43:21,472 - rag.document_store - ERROR - Store integrity check failed: Mismatched sizes - Index: 190, Docs: 0, Pages: 0
+2024-11-29 13:43:21,472 - rag.document_store - WARNING - Initial store integrity check failed
+2024-11-29 13:43:21,472 - __main__ - INFO - Pipeline initialization completed successfully
+2024-11-29 13:43:21,472 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:43:26,390 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:43:26,390 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 13:43:26,390 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 13:43:26,748 - pdf_processor.extractor - INFO - Successfully extracted 50 pages of text
+2024-11-29 13:43:26,754 - __main__ - INFO - Created 95 text chunks
+2024-11-29 13:43:26,754 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 13:43:26,754 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:43:27,781 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:43:27,782 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 13:43:27,782 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:43:30,895 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:43:30,895 - topic_extraction.topic_extractor - INFO - Attempting to connect to Ollama at http://localhost:11434/api/generate
+2024-11-29 13:43:30,895 - topic_extraction.topic_extractor - INFO - Sending prompt of size: 3588 characters
+2024-11-29 13:43:32,360 - topic_extraction.topic_extractor - INFO - Received response with status code: 200
+2024-11-29 13:43:32,360 - topic_extraction.topic_extractor - INFO - Successfully extracted 9 topics
+2024-11-29 13:43:32,360 - __main__ - INFO - Successfully extracted 9 topics
+2024-11-29 13:43:32,360 - __main__ - INFO - Setting up RAG pipeline...
+2024-11-29 13:43:32,360 - embeddings.embedding_manager - INFO - Generating embeddings for 95 texts
+2024-11-29 13:43:33,004 - rag.document_store - ERROR - Store integrity check failed: Mismatched sizes - Index: 285, Docs: 95, Pages: 95
+2024-11-29 13:43:33,005 - rag.document_store - ERROR - Failed to add documents: Store integrity check failed after adding documents
+2024-11-29 13:43:33,005 - __main__ - ERROR - RAG pipeline setup failed: Store integrity check failed after adding documents
+2024-11-29 13:43:33,005 - __main__ - ERROR - Pipeline execution failed: Failed to setup RAG pipeline: Store integrity check failed after adding documents
+2024-11-29 13:43:33,005 - root - ERROR - Pipeline execution failed: Failed to setup RAG pipeline: Store integrity check failed after adding documents
+Traceback (most recent call last):
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 180, in setup_rag_pipeline
+    self.document_store.add_documents(chunks, embeddings)
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/rag/document_store.py", line 162, in add_documents
+    raise RuntimeError("Store integrity check failed after adding documents")
+RuntimeError: Store integrity check failed after adding documents
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 293, in main
+    topics_data, questions_data = pipeline.run()
+                                  ^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 258, in run
+    self.setup_rag_pipeline(chunks)
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 185, in setup_rag_pipeline
+    raise RuntimeError(f"Failed to setup RAG pipeline: {str(e)}")
+RuntimeError: Failed to setup RAG pipeline: Store integrity check failed after adding documents
+2024-11-29 13:46:06,662 - __main__ - INFO - Initializing pipeline components...
+2024-11-29 13:46:06,662 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:46:08,290 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:46:08,290 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:46:08,697 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 13:46:08,697 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 13:46:12,401 - rag.document_store - INFO - Removed existing index file
+2024-11-29 13:46:12,401 - rag.document_store - INFO - Creating new FAISS index
+2024-11-29 13:46:12,414 - rag.document_store - INFO - Training FAISS index...
+2024-11-29 13:46:12,450 - rag.document_store - INFO - Index initialization completed successfully
+2024-11-29 13:46:12,450 - __main__ - INFO - Pipeline initialization completed successfully
+2024-11-29 13:46:12,450 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:46:13,192 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:46:13,193 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 13:46:13,193 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 13:46:13,547 - pdf_processor.extractor - INFO - Successfully extracted 50 pages of text
+2024-11-29 13:46:13,553 - __main__ - INFO - Created 95 text chunks
+2024-11-29 13:46:13,553 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 13:46:13,553 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:46:15,314 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:46:15,314 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 13:46:15,314 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 13:46:15,813 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 13:46:15,813 - topic_extraction.topic_extractor - INFO - Attempting to connect to Ollama at http://localhost:11434/api/generate
+2024-11-29 13:46:15,813 - topic_extraction.topic_extractor - INFO - Sending prompt of size: 3588 characters
+2024-11-29 13:46:17,317 - topic_extraction.topic_extractor - INFO - Received response with status code: 200
+2024-11-29 13:46:17,317 - topic_extraction.topic_extractor - INFO - Successfully extracted 9 topics
+2024-11-29 13:46:17,318 - __main__ - INFO - Successfully extracted 9 topics
+2024-11-29 13:46:17,318 - __main__ - INFO - Setting up RAG pipeline...
+2024-11-29 13:46:17,318 - embeddings.embedding_manager - INFO - Generating embeddings for 95 texts
+2024-11-29 13:46:17,964 - rag.document_store - INFO - Successfully added 95 documents
+2024-11-29 13:46:17,964 - __main__ - INFO - RAG pipeline setup completed successfully
+2024-11-29 13:46:17,964 - __main__ - INFO - Starting question generation process...
+2024-11-29 13:46:17,964 - rag.retriever - INFO - Retrieving contexts for topic: Project Definition
+2024-11-29 13:46:17,964 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 13:46:47,261 - rag.retriever - INFO - Retrieving contexts for topic: Temporary Nature Of Projects
+2024-11-29 13:46:47,261 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 13:46:47,271 - question_generation.generator - WARNING - No contexts provided for topic: Temporary Nature Of Projects
+2024-11-29 13:46:47,271 - rag.retriever - INFO - Retrieving contexts for topic: Unique Objective Of Projects
+2024-11-29 13:46:47,271 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 13:47:23,403 - rag.retriever - INFO - Retrieving contexts for topic: Project Resources
+2024-11-29 13:47:23,404 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 13:47:23,410 - question_generation.generator - WARNING - No contexts provided for topic: Project Resources
+2024-11-29 13:47:23,410 - rag.retriever - INFO - Retrieving contexts for topic: Project Management Methodology
+2024-11-29 13:47:23,410 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 13:47:23,415 - question_generation.generator - WARNING - No contexts provided for topic: Project Management Methodology
+2024-11-29 13:47:23,415 - rag.retriever - INFO - Retrieving contexts for topic: Project Planning And Organization
+2024-11-29 13:47:23,415 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 13:47:55,333 - rag.retriever - INFO - Retrieving contexts for topic: Project Manager's Role
+2024-11-29 13:47:55,333 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 13:48:05,141 - question_generation.generator - ERROR - Error formatting question: 'list' object has no attribute 'strip'
+2024-11-29 13:48:13,247 - question_generation.generator - ERROR - Error formatting question: 'list' object has no attribute 'strip'
+2024-11-29 13:48:35,914 - rag.retriever - INFO - Retrieving contexts for topic: Interdependent Tasks In A Project
+2024-11-29 13:48:35,914 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 13:48:35,921 - question_generation.generator - WARNING - No contexts provided for topic: Interdependent Tasks In A Project
+2024-11-29 13:48:35,921 - rag.retriever - INFO - Retrieving contexts for topic: Project Scope, Schedule, And Cost
+2024-11-29 13:48:35,921 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 13:48:35,925 - question_generation.generator - WARNING - No contexts provided for topic: Project Scope, Schedule, And Cost
+2024-11-29 13:48:35,926 - __main__ - INFO - Successfully generated 36 questions
+2024-11-29 13:48:35,926 - __main__ - INFO - Pipeline completed successfully!
+2024-11-29 15:49:59,876 - __main__ - INFO - Initializing pipeline components...
+2024-11-29 15:49:59,876 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 15:50:01,965 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 15:50:01,965 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 15:50:02,359 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 15:50:02,359 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 15:50:06,377 - rag.document_store - INFO - Removed existing index file
+2024-11-29 15:50:06,377 - rag.document_store - INFO - Creating new FAISS index
+2024-11-29 15:50:06,380 - rag.document_store - INFO - Training FAISS index...
+2024-11-29 15:50:06,417 - __main__ - INFO - Pipeline initialization completed successfully
+2024-11-29 15:50:06,417 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 15:50:07,049 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 15:50:07,049 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 15:50:07,049 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 15:50:07,402 - pdf_processor.extractor - INFO - Successfully extracted 41 pages of text
+2024-11-29 15:50:07,402 - __main__ - ERROR - Pipeline execution failed: expected string or bytes-like object, got 'list'
+2024-11-29 15:50:07,402 - root - ERROR - Pipeline execution failed: expected string or bytes-like object, got 'list'
+Traceback (most recent call last):
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 293, in main
+    topics_data, questions_data = pipeline.run()
+                                  ^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 252, in run
+    chunks = self._create_chunks(text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 120, in _create_chunks
+    chunks = splitter.split_text(text)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/miniconda3/envs/qna_env/lib/python3.11/site-packages/langchain_text_splitters/character.py", line 118, in split_text
+    return self._split_text(text, self._separators)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/miniconda3/envs/qna_env/lib/python3.11/site-packages/langchain_text_splitters/character.py", line 88, in _split_text
+    if re.search(_separator, text):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/miniconda3/envs/qna_env/lib/python3.11/re/__init__.py", line 176, in search
+    return _compile(pattern, flags).search(string)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected string or bytes-like object, got 'list'
+2024-11-29 15:58:06,747 - __main__ - INFO - Initializing pipeline components...
+2024-11-29 15:58:06,747 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 15:58:09,154 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 15:58:09,154 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 15:58:09,561 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 15:58:09,561 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 15:58:13,439 - rag.document_store - INFO - Removed existing index file
+2024-11-29 15:58:13,439 - rag.document_store - INFO - Creating new FAISS index
+2024-11-29 15:58:13,442 - rag.document_store - INFO - Training FAISS index...
+2024-11-29 15:58:13,477 - __main__ - INFO - Pipeline initialization completed successfully
+2024-11-29 15:58:13,477 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 15:58:15,405 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 15:58:15,405 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 15:58:15,405 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 15:58:15,752 - pdf_processor.extractor - INFO - Successfully extracted 41 pages of text
+2024-11-29 15:58:15,752 - __main__ - INFO - Creating text chunks...
+2024-11-29 15:58:15,756 - __main__ - INFO - Created 95 text chunks
+2024-11-29 15:58:15,756 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 15:58:15,756 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 15:58:15,756 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 15:58:16,524 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 15:58:16,524 - topic_extraction.topic_extractor - INFO - Attempting to connect to Ollama at http://localhost:11434/api/generate
+2024-11-29 15:58:16,524 - topic_extraction.topic_extractor - INFO - Sending prompt of size: 3588 characters
+2024-11-29 15:58:17,790 - topic_extraction.topic_extractor - INFO - Received response with status code: 200
+2024-11-29 15:58:17,790 - topic_extraction.topic_extractor - INFO - Successfully extracted 7 topics
+2024-11-29 15:58:17,790 - __main__ - INFO - Successfully extracted 7 topics
+2024-11-29 15:58:17,790 - __main__ - INFO - Setting up RAG pipeline...
+2024-11-29 15:58:17,790 - embeddings.embedding_manager - INFO - Generating embeddings for 95 texts
+2024-11-29 15:58:18,436 - rag.document_store - INFO - Successfully added 95 documents
+2024-11-29 15:58:18,436 - __main__ - INFO - RAG pipeline setup completed successfully
+2024-11-29 15:58:18,436 - __main__ - INFO - Starting question generation process...
+2024-11-29 15:58:18,436 - rag.retriever - INFO - Retrieving contexts for topic: Project Definition
+2024-11-29 15:58:18,436 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 15:58:18,441 - rag.retriever - ERROR - Error retrieving contexts: 'document_id'
+2024-11-29 15:58:18,441 - __main__ - ERROR - Question generation failed: 'document_id'
+2024-11-29 15:58:18,441 - __main__ - ERROR - Pipeline execution failed: 'document_id'
+2024-11-29 15:58:18,441 - root - ERROR - Pipeline execution failed: 'document_id'
+Traceback (most recent call last):
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 290, in main
+    topics_data, questions_data = pipeline.run()
+                                  ^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 258, in run
+    questions_data = self.generate_questions(topics_data["main_topics"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 211, in generate_questions
+    contexts = self.rag_retriever.get_relevant_contexts(topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/rag/retriever.py", line 68, in get_relevant_contexts
+    filtered_contexts = self._process_search_results(results, max_contexts)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/rag/retriever.py", line 139, in _process_search_results
+    'document_id': result['document_id']
+                   ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'document_id'
+2024-11-29 16:02:27,760 - __main__ - INFO - Initializing pipeline components...
+2024-11-29 16:02:27,760 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:02:28,712 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:02:28,712 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 16:02:29,115 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 16:02:29,116 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 16:02:32,359 - rag.document_store - INFO - Removed existing index file
+2024-11-29 16:02:32,359 - rag.document_store - INFO - Creating new FAISS index
+2024-11-29 16:02:32,363 - rag.document_store - INFO - Training FAISS index...
+2024-11-29 16:02:32,396 - __main__ - INFO - Pipeline initialization completed successfully
+2024-11-29 16:02:32,396 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:02:32,916 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:02:32,916 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 16:02:32,916 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 16:02:33,267 - pdf_processor.extractor - INFO - Successfully extracted 41 pages of text
+2024-11-29 16:02:33,267 - __main__ - INFO - Creating text chunks...
+2024-11-29 16:02:33,271 - __main__ - INFO - Created 95 text chunks
+2024-11-29 16:02:33,271 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 16:02:33,271 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 16:02:33,271 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:02:34,114 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:02:34,114 - topic_extraction.topic_extractor - INFO - Attempting to connect to Ollama at http://localhost:11434/api/generate
+2024-11-29 16:02:34,114 - topic_extraction.topic_extractor - INFO - Sending prompt of size: 3588 characters
+2024-11-29 16:02:35,286 - topic_extraction.topic_extractor - INFO - Received response with status code: 200
+2024-11-29 16:02:35,286 - topic_extraction.topic_extractor - INFO - Successfully extracted 7 topics
+2024-11-29 16:02:35,286 - __main__ - INFO - Successfully extracted 7 topics
+2024-11-29 16:02:35,286 - __main__ - INFO - Setting up RAG pipeline...
+2024-11-29 16:02:35,286 - embeddings.embedding_manager - INFO - Generating embeddings for 95 texts
+2024-11-29 16:02:35,940 - rag.document_store - INFO - Successfully added 95 documents
+2024-11-29 16:02:35,940 - __main__ - INFO - RAG pipeline setup completed successfully
+2024-11-29 16:02:35,940 - __main__ - INFO - Starting question generation process...
+2024-11-29 16:02:35,940 - rag.retriever - INFO - Retrieving contexts for topic: Project Definition
+2024-11-29 16:02:35,940 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:02:35,945 - rag.retriever - ERROR - Error retrieving contexts: 'document_id'
+2024-11-29 16:02:35,945 - __main__ - ERROR - Question generation failed: 'document_id'
+2024-11-29 16:02:35,945 - __main__ - ERROR - Pipeline execution failed: 'document_id'
+2024-11-29 16:02:35,945 - root - ERROR - Pipeline execution failed: 'document_id'
+Traceback (most recent call last):
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 290, in main
+    topics_data, questions_data = pipeline.run()
+                                  ^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 258, in run
+    questions_data = self.generate_questions(topics_data["main_topics"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 211, in generate_questions
+    contexts = self.rag_retriever.get_relevant_contexts(topic)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/rag/retriever.py", line 68, in get_relevant_contexts
+    filtered_contexts = self._process_search_results(results, max_contexts)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/rag/retriever.py", line 139, in _process_search_results
+    'document_id': result['document_id']
+                   ~~~~~~^^^^^^^^^^^^^^^
+KeyError: 'document_id'
+2024-11-29 16:06:27,112 - __main__ - INFO - Initializing pipeline components...
+2024-11-29 16:06:27,112 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:06:29,399 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:06:29,399 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 16:06:29,854 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 16:06:29,854 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 16:06:33,332 - rag.document_store - INFO - Removed existing index file
+2024-11-29 16:06:33,332 - rag.document_store - INFO - Creating new FAISS index
+2024-11-29 16:06:33,336 - rag.document_store - INFO - Training FAISS index...
+2024-11-29 16:06:33,372 - __main__ - INFO - Pipeline initialization completed successfully
+2024-11-29 16:06:33,373 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:06:35,950 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:06:35,951 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 16:06:35,951 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 16:06:36,300 - pdf_processor.extractor - INFO - Successfully extracted 41 pages of text
+2024-11-29 16:06:36,300 - __main__ - INFO - Creating text chunks...
+2024-11-29 16:06:36,304 - __main__ - INFO - Created 95 text chunks
+2024-11-29 16:06:36,304 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 16:06:36,304 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 16:06:36,304 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:06:36,837 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:06:36,837 - topic_extraction.topic_extractor - INFO - Attempting to connect to Ollama at http://localhost:11434/api/generate
+2024-11-29 16:06:36,837 - topic_extraction.topic_extractor - INFO - Sending prompt of size: 3588 characters
+2024-11-29 16:06:38,399 - topic_extraction.topic_extractor - INFO - Received response with status code: 200
+2024-11-29 16:06:38,400 - topic_extraction.topic_extractor - INFO - Successfully extracted 9 topics
+2024-11-29 16:06:38,400 - __main__ - INFO - Successfully extracted 9 topics
+2024-11-29 16:06:38,400 - __main__ - INFO - Setting up RAG pipeline...
+2024-11-29 16:06:38,400 - embeddings.embedding_manager - INFO - Generating embeddings for 95 texts
+2024-11-29 16:06:39,051 - __main__ - INFO - RAG pipeline setup completed successfully
+2024-11-29 16:06:39,051 - __main__ - INFO - Starting question generation process...
+2024-11-29 16:06:39,051 - rag.retriever - INFO - Retrieving contexts for topic: Project Definition
+2024-11-29 16:06:39,051 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:06:39,056 - question_generation.generator - ERROR - Error generating questions: 'document'
+2024-11-29 16:06:39,056 - __main__ - ERROR - Question generation failed: 'document'
+2024-11-29 16:06:39,056 - __main__ - ERROR - Pipeline execution failed: 'document'
+2024-11-29 16:06:39,057 - root - ERROR - Pipeline execution failed: 'document'
+Traceback (most recent call last):
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 290, in main
+    topics_data, questions_data = pipeline.run()
+                                  ^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 258, in run
+    questions_data = self.generate_questions(topics_data["main_topics"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/main.py", line 214, in generate_questions
+    topic_questions = self.question_generator.generate_questions(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/question_generation/generator.py", line 76, in generate_questions
+    batch_questions = self._generate_question_batch(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/question_generation/generator.py", line 110, in _generate_question_batch
+    prompt = self._create_question_prompt(topic, contexts, batch_size)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/awiros-tech/workspace/sourav/qna_ai/src/question_generation/generator.py", line 147, in _create_question_prompt
+    f"[Page {ctx['page_number']}] {ctx['document']}"
+                                   ~~~^^^^^^^^^^^^
+KeyError: 'document'
+2024-11-29 16:08:42,067 - __main__ - INFO - Initializing pipeline components...
+2024-11-29 16:08:42,067 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:08:45,427 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:08:45,427 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 16:08:45,830 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 16:08:45,830 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 16:08:48,788 - rag.document_store - INFO - Removed existing index file
+2024-11-29 16:08:48,788 - rag.document_store - INFO - Creating new FAISS index
+2024-11-29 16:08:48,791 - rag.document_store - INFO - Training FAISS index...
+2024-11-29 16:08:48,825 - __main__ - INFO - Pipeline initialization completed successfully
+2024-11-29 16:08:48,825 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:08:51,165 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:08:51,165 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 16:08:51,165 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 16:08:51,525 - pdf_processor.extractor - INFO - Successfully extracted 41 pages of text
+2024-11-29 16:08:51,525 - __main__ - INFO - Creating text chunks...
+2024-11-29 16:08:51,530 - __main__ - INFO - Created 95 text chunks
+2024-11-29 16:08:51,530 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 16:08:51,530 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 16:08:51,530 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:08:52,044 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:08:52,044 - topic_extraction.topic_extractor - INFO - Attempting to connect to Ollama at http://localhost:11434/api/generate
+2024-11-29 16:08:52,044 - topic_extraction.topic_extractor - INFO - Sending prompt of size: 3588 characters
+2024-11-29 16:08:53,631 - topic_extraction.topic_extractor - INFO - Received response with status code: 200
+2024-11-29 16:08:53,631 - topic_extraction.topic_extractor - INFO - Successfully extracted 8 topics
+2024-11-29 16:08:53,631 - __main__ - INFO - Successfully extracted 8 topics
+2024-11-29 16:08:53,631 - __main__ - INFO - Setting up RAG pipeline...
+2024-11-29 16:08:53,631 - embeddings.embedding_manager - INFO - Generating embeddings for 95 texts
+2024-11-29 16:08:54,273 - __main__ - INFO - RAG pipeline setup completed successfully
+2024-11-29 16:08:54,273 - __main__ - INFO - Starting question generation process...
+2024-11-29 16:08:54,273 - rag.retriever - INFO - Retrieving contexts for topic: Project Definition
+2024-11-29 16:08:54,273 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:09:24,467 - rag.retriever - INFO - Retrieving contexts for topic: Temporary Nature Of Projects
+2024-11-29 16:09:24,467 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:09:24,473 - question_generation.generator - WARNING - No contexts provided for topic: Temporary Nature Of Projects
+2024-11-29 16:09:24,473 - rag.retriever - INFO - Retrieving contexts for topic: Resources Management In Projects
+2024-11-29 16:09:24,473 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:09:24,478 - question_generation.generator - WARNING - No contexts provided for topic: Resources Management In Projects
+2024-11-29 16:09:24,478 - rag.retriever - INFO - Retrieving contexts for topic: Planned And Organized Methodology In Projects
+2024-11-29 16:09:24,478 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:09:24,481 - question_generation.generator - WARNING - No contexts provided for topic: Planned And Organized Methodology In Projects
+2024-11-29 16:09:24,482 - rag.retriever - INFO - Retrieving contexts for topic: Uniqueness Of Projects
+2024-11-29 16:09:24,482 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:09:24,485 - question_generation.generator - WARNING - No contexts provided for topic: Uniqueness Of Projects
+2024-11-29 16:09:24,485 - rag.retriever - INFO - Retrieving contexts for topic: Project Management Responsibilities
+2024-11-29 16:09:24,485 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:09:55,385 - rag.retriever - INFO - Retrieving contexts for topic: Project Objectives (scope, Schedule, Cost)
+2024-11-29 16:09:55,385 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:10:27,751 - rag.retriever - INFO - Retrieving contexts for topic: Interdependent Tasks In Projects
+2024-11-29 16:10:27,751 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:10:27,758 - question_generation.generator - WARNING - No contexts provided for topic: Interdependent Tasks In Projects
+2024-11-29 16:10:27,759 - __main__ - INFO - Successfully generated 25 questions
+2024-11-29 16:10:27,759 - __main__ - INFO - Pipeline completed successfully!
+2024-11-29 16:19:46,660 - __main__ - INFO - Initializing pipeline components...
+2024-11-29 16:19:46,660 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:19:49,162 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:19:49,162 - embeddings.embedding_manager - INFO - Loading embedding model: sentence-transformers/all-mpnet-base-v2
+2024-11-29 16:19:49,559 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cuda
+2024-11-29 16:19:49,560 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-mpnet-base-v2
+2024-11-29 16:19:52,560 - rag.document_store - INFO - Removed existing index file
+2024-11-29 16:19:52,560 - rag.document_store - INFO - Creating new FAISS index
+2024-11-29 16:19:52,563 - rag.document_store - INFO - Training FAISS index...
+2024-11-29 16:19:52,601 - __main__ - INFO - Pipeline initialization completed successfully
+2024-11-29 16:19:52,601 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:19:53,304 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:19:53,304 - __main__ - INFO - Starting PDF extraction...
+2024-11-29 16:19:53,304 - pdf_processor.extractor - INFO - Starting text extraction from: resources/Project_Management.pdf
+2024-11-29 16:19:53,656 - pdf_processor.extractor - INFO - Successfully extracted 41 pages of text
+2024-11-29 16:19:53,657 - __main__ - INFO - Creating text chunks...
+2024-11-29 16:19:53,661 - __main__ - INFO - Created 95 text chunks
+2024-11-29 16:19:53,661 - __main__ - INFO - Extracting main topics from text...
+2024-11-29 16:19:53,661 - topic_extraction.topic_extractor - INFO - Starting topic extraction...
+2024-11-29 16:19:53,661 - topic_extraction.topic_extractor - INFO - Testing Ollama connection...
+2024-11-29 16:19:54,248 - topic_extraction.topic_extractor - INFO - Successfully connected to Ollama
+2024-11-29 16:19:54,248 - topic_extraction.topic_extractor - INFO - Attempting to connect to Ollama at http://localhost:11434/api/generate
+2024-11-29 16:19:54,248 - topic_extraction.topic_extractor - INFO - Sending prompt of size: 3588 characters
+2024-11-29 16:19:55,777 - topic_extraction.topic_extractor - INFO - Received response with status code: 200
+2024-11-29 16:19:55,777 - topic_extraction.topic_extractor - INFO - Successfully extracted 8 topics
+2024-11-29 16:19:55,777 - __main__ - INFO - Successfully extracted 8 topics
+2024-11-29 16:19:55,777 - __main__ - INFO - Setting up RAG pipeline...
+2024-11-29 16:19:55,777 - embeddings.embedding_manager - INFO - Generating embeddings for 95 texts
+2024-11-29 16:19:56,425 - __main__ - INFO - RAG pipeline setup completed successfully
+2024-11-29 16:19:56,425 - __main__ - INFO - Starting question generation process...
+2024-11-29 16:19:56,425 - rag.retriever - INFO - Retrieving contexts for topic: Project Definition
+2024-11-29 16:19:56,425 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:20:32,242 - rag.retriever - INFO - Retrieving contexts for topic: Temporariness And Uniqueness Of Projects
+2024-11-29 16:20:32,242 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:20:32,252 - question_generation.generator - WARNING - No contexts provided for topic: Temporariness And Uniqueness Of Projects
+2024-11-29 16:20:32,252 - rag.retriever - INFO - Retrieving contexts for topic: Project Scope, Schedule, And Cost
+2024-11-29 16:20:32,252 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:20:32,256 - question_generation.generator - WARNING - No contexts provided for topic: Project Scope, Schedule, And Cost
+2024-11-29 16:20:32,256 - rag.retriever - INFO - Retrieving contexts for topic: Project Team And Goal Identification
+2024-11-29 16:20:32,256 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:20:32,260 - question_generation.generator - WARNING - No contexts provided for topic: Project Team And Goal Identification
+2024-11-29 16:20:32,260 - rag.retriever - INFO - Retrieving contexts for topic: Project Resources Management
+2024-11-29 16:20:32,260 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:20:32,264 - question_generation.generator - WARNING - No contexts provided for topic: Project Resources Management
+2024-11-29 16:20:32,264 - rag.retriever - INFO - Retrieving contexts for topic: Project Methodology
+2024-11-29 16:20:32,264 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:21:05,931 - rag.retriever - INFO - Retrieving contexts for topic: Project Impact On Target Population
+2024-11-29 16:21:05,931 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:21:38,142 - rag.retriever - INFO - Retrieving contexts for topic: Interdependency Of Project Tasks
+2024-11-29 16:21:38,142 - embeddings.embedding_manager - INFO - Generating embeddings for 1 texts
+2024-11-29 16:21:38,150 - question_generation.generator - WARNING - No contexts provided for topic: Interdependency Of Project Tasks
+2024-11-29 16:21:38,151 - __main__ - INFO - Successfully generated 26 questions
+2024-11-29 16:21:38,151 - __main__ - INFO - Pipeline completed successfully!

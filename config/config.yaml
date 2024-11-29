@@ -1,0 +1,59 @@
+# PDF Processing Configuration
+pdf:
+  input_path: "resources/Project_Management.pdf"
+  chunk_size: 1000
+  chunk_overlap: 200
+
+# LLM Configuration
+llm:
+  model_name: "mistral"  # Changed from "mixtral" to "mistral"
+  temperature: 0.7
+  max_tokens: 2048
+  context_window: 8192
+
+# Embedding Configuration
+embeddings:
+  model_name: "sentence-transformers/all-mpnet-base-v2"
+  max_seq_length: 384
+  batch_size: 32
+
+# Vector Store Configuration
+vector_store:
+  index_path: "data/vector_store/faiss_index.bin" 
+  dimension: 768
+  similarity_metric: "cosine"
+  nlist: 100
+  nprobe: 10
+
+# Topic Extraction
+topic_extraction:
+  min_topics: 5
+  max_topics: 10
+  topic_prompt_template: "Extract the main topics from the following text. Focus on key project management concepts: {text}"
+
+# Question Generation
+question_generation:
+  questions_per_topic: 10
+  mcq_options: 4
+  difficulty_levels: ["easy", "medium", "hard"]
+  question_prompt_template: "Generate a multiple choice question about {topic} using this context: {context}"
+
+# Output Configuration
+output:
+  topics_path: "results/topics.json"
+  questions_path: "results/questions.json"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file_path: "logs/app.log"
+
+# RAG Configuration
+rag:
+  retriever:
+    search_k: 5  # number of documents to retrieve
+    min_relevance_score: 0.7
+  context:
+    max_length: 2000
+    template: "Based on the following context from a project management book: {context}\n\nGenerate a question about: {topic}"

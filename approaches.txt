@@ -1,0 +1,185 @@
+# Tools & Frameworks
+- Ollama with mixtral model for LLM-based operations
+  - Used for topic extraction and question generation
+  - Chosen for local deployment and good performance
+- Sentence-transformers (all-mpnet-base-v2) for embeddings
+  - High-quality embeddings for semantic search
+  - Good balance of performance and accuracy
+- FAISS for vector storage
+  - Efficient similarity search
+  - Scalable for large document collections
+- LangChain for RAG pipeline orchestration
+  - Simplifies RAG implementation
+  - Provides robust document handling
+- PyPDF2 for PDF processing
+  - Reliable text extraction
+  - Good handling of complex PDF structures
+
+# Assumptions
+1. PDF Format and Structure:
+   - PDF is properly formatted and readable
+   - Contains clear sections or chapters
+   - Text is extractable and not in image format
+   - English language content
+
+2. Topic Organization:
+   - Content is organized by clear topics
+   - Topics are distinct and identifiable
+   - 5-10 main topics expected
+   - Hierarchical content structure
+
+3. Question Generation:
+   - Questions should test understanding, not memorization
+   - Multiple choice with 4 options each
+   - One clearly correct answer per question
+   - Explanations should reference specific pages
+   - Mix of difficulty levels desired
+
+4. System Requirements:
+   - Ollama running locally
+   - Sufficient RAM (8GB minimum)
+   - Reasonable processing time acceptable
+   - Internet access for initial model downloads
+
+# Approach
+
+## Level 1: Basic Topic Extraction and MCQ Generation
+
+1. PDF Processing:
+   - Implemented robust PDF text extraction
+   - Clean and normalize text content
+   - Handle common PDF extraction issues
+   - Remove headers, footers, page numbers
+
+2. Topic Extraction:
+   - Use Ollama for intelligent topic identification
+   - Structured prompt engineering
+   - Validation of extracted topics
+   - Ensure topic coherence and relevance
+
+3. Question Generation:
+   - Context-aware question creation
+   - Structured format validation
+   - Answer and distractor quality checks
+   - Page number tracking
+
+## Level 2: RAG Implementation
+
+1. Document Processing:
+   - Split text into optimal chunk sizes
+   - Maintain context boundaries
+   - Track page numbers for references
+   - Clean and normalize chunks
+
+2. Embedding Pipeline:
+   - Generate high-quality embeddings
+   - Efficient batch processing
+   - Memory-optimized operations
+   - Embedding validation
+
+3. Vector Store:
+   - FAISS IVF index for scalability
+   - Optimized similarity search
+   - Efficient storage and retrieval
+   - Index persistence
+
+4. RAG Integration:
+   - Context retrieval optimization
+   - Relevance scoring
+   - Duplicate detection
+   - Context combination strategies
+
+# Challenges & Solutions
+
+1. Challenge: PDF Text Extraction Quality
+   Solution:
+   - Robust text cleaning pipeline
+   - Handle various PDF formats
+   - Custom header/footer detection
+   - Page number tracking system
+
+2. Challenge: Topic Coherence
+   Solution:
+   - Structured prompting for Ollama
+   - Topic validation rules
+   - Duplicate detection
+   - Hierarchy maintenance
+
+3. Challenge: Question Quality
+   Solution:
+   - Context-aware generation
+   - Multi-stage validation
+   - Quality metrics
+   - Explanation requirements
+
+4. Challenge: RAG Performance
+   Solution:
+   - Optimized chunk sizes
+   - Efficient indexing strategy
+   - Batch processing
+   - Caching mechanisms
+
+5. Challenge: Memory Management
+   Solution:
+   - Batch processing
+   - Efficient data structures
+   - Garbage collection
+   - Stream processing where possible
+
+# Design Decisions
+
+1. Choice of Ollama:
+   - Local deployment capability
+   - Good performance characteristics
+   - Active development and support
+   - Cost-effective solution
+
+2. Embedding Model Selection:
+   - all-mpnet-base-v2 for accuracy
+   - Good dimensionality (768)
+   - Efficient processing
+   - Wide community adoption
+
+3. FAISS Configuration:
+   - IVF index for scalability
+   - Optimized for similarity search
+   - Balance of speed and accuracy
+   - Persistence support
+
+4. Architecture Design:
+   - Modular components
+   - Clear separation of concerns
+   - Extensible design
+   - Comprehensive error handling
+
+# Future Improvements
+
+1. Enhanced Question Generation:
+   - More question types
+   - Difficulty level targeting
+   - Better distractor generation
+   - Question variety
+
+2. Performance Optimization:
+   - Parallel processing
+   - GPU acceleration
+   - Improved caching
+   - Streaming responses
+
+3. Quality Improvements:
+   - Advanced validation rules
+   - Question clustering
+   - Topic relationship mapping
+   - Better context selection
+
+4. User Experience:
+   - Progress tracking
+   - Customization options
+   - Better error reporting
+   - Configuration UI
+
+5. System Extensions:
+   - Support for more formats
+   - Multiple language support
+   - API endpoints
+   - Batch processing

@@ -1,0 +1,480 @@
+{
+    "metadata": {
+        "generated_at": "2024-11-29T10:49:56.425550Z",
+        "total_questions": 26,
+        "book_title": "Project Management Professional Guide",
+        "generation_method": "RAG Pipeline",
+        "embedding_model": "sentence-transformers/all-mpnet-base-v2",
+        "vector_store": "FAISS"
+    },
+    "questions": [
+        {
+            "id": "Q1",
+            "topic": "Project Definition",
+            "type": "MCQ",
+            "question": "What is the defining characteristic that separates a project from other organizational activities?",
+            "options": [
+                "A) They have an indefinite duration",
+                "B) They are carried out by the same team indefinitely",
+                "C) They have a unique result or product",
+                "D) They do not follow a planned, organized method"
+            ],
+            "correct_answer": "C",
+            "explanation": "A project is unique because it delivers a distinct and separate output or service, unlike other organizational activities which may produce similar results repeatedly. (Page 1) (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q2",
+            "topic": "Project Definition",
+            "type": "MCQ",
+            "question": "Why do projects have limited resources?",
+            "options": [
+                "A) Resources are unlimited in an organization",
+                "B) Projects must be completed efficiently to maximize value",
+                "C) It is a requirement for all organizational activities",
+                "D) Project managers prefer working with fewer resources"
+            ],
+            "correct_answer": "B",
+            "explanation": "Projects are temporary endeavors and have an end date, so resources must be used efficiently to maximize the value they deliver. (Page 1) (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q3",
+            "topic": "Project Definition",
+            "type": "MCQ",
+            "question": "What is the primary purpose of project planning?",
+            "options": [
+                "A) To make the project more complex",
+                "B) To create chaos within a project",
+                "C) To outline activities with related inputs and outputs aimed at achieving objectives and goals",
+                "D) To define the problems that projects should solve"
+            ],
+            "correct_answer": "C",
+            "explanation": "Project planning is used to plan a clear set of activities with related inputs and outputs, aiming to achieve specific objectives and goals linked to anticipated effects and impacts on the target population. (Page 2) (Page 2)",
+            "source": {
+                "page_number": 2,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q4",
+            "topic": "Project Definition",
+            "type": "MCQ",
+            "question": "What is the primary characteristic that distinguishes a project from other activities within an organization?",
+            "options": [
+                "A) They are ongoing efforts without a clear end date",
+                "B) They do not require any specific resources to complete",
+                "C) They follow a predefined methodology but are not subject to change or complexity",
+                "A) They have a unique purpose and are temporary with a definite start and end date"
+            ],
+            "correct_answer": "A",
+            "explanation": "Projects are unique from other activities because they have a specific time frame, starting point, and definable objectives. This sets them apart as temporary endeavors that ultimately come to an end. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q5",
+            "topic": "Project Definition",
+            "type": "MCQ",
+            "question": "What can be inferred about the management of projects?",
+            "options": [
+                "A) Project managers do not have to follow a planned, organized methodology",
+                "B) A project's objectives and goals are not linked to desired effects or impacts on a target population",
+                "C) There is no need for resources to be assigned to tasks within a project",
+                "A) Project management involves guiding the project towards its objectives while considering factors like quality, performance, and resource allocation"
+            ],
+            "correct_answer": "A",
+            "explanation": "Project management involves planning, organizing, and directing a set of activities with related inputs and outputs to achieve specific goals. This includes allocating resources effectively to ensure the project's success. (Page 2)",
+            "source": {
+                "page_number": 2,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q6",
+            "topic": "Project Definition",
+            "type": "MCQ",
+            "question": "Why are projects often unique?",
+            "options": [
+                "A) They follow a fixed methodology that doesn't accommodate change or complexity",
+                "B) Projects are always part of broader, less specific business objectives",
+                "C) Project teams and resources remain unchanged throughout the project lifecycle",
+                "A) Each project is undertaken to create a unique product or service"
+            ],
+            "correct_answer": "A",
+            "explanation": "Projects are unique because they're temporary endeavors undertaken to produce a distinct outcome, product, or service. This means that each project will have its own set of tasks and resources, making it different from other projects. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q7",
+            "topic": "Project Definition",
+            "type": "MCQ",
+            "question": "What is the main difference between a project and an ongoing business function within an organization?",
+            "options": [
+                "A) A project has a specific end date while a business function does not.",
+                "B) Projects are temporary endeavors designed to create a unique product or service, whereas business functions are permanent.",
+                "C) Business functions are unique within an organization, while projects are repeated tasks with similar objectives.",
+                "D) The scope of a project is broader than that of a business function."
+            ],
+            "correct_answer": "B",
+            "explanation": "A project is temporary and undertaken to create a unique product or service, whereas ongoing business functions are permanent and recurring within an organization. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q8",
+            "topic": "Project Definition",
+            "type": "MCQ",
+            "question": "Which of the following statements correctly describes the set of activities in a project?",
+            "options": [
+                "A) The activities in a project are random and unplanned.",
+                "B) The activities in a project have definite start and end dates, planned completion data (due date), and assigned resources.",
+                "C) Project activities may change over time due to flexibility, but they still need to be organized and follow a method to meet their objectives.",
+                "D) Activities in a project are not interdependent."
+            ],
+            "correct_answer": "B",
+            "explanation": "Project activities have definite start and end dates, planned completion data (due date), and assigned resources. They are organized and follow a method to meet their objectives. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q9",
+            "topic": "Project Definition",
+            "type": "MCQ",
+            "question": "What is the main goal of project planning and management in Dilla University's context?",
+            "options": [
+                "A) To conduct projects that are not directed towards a specific outcome/goal.",
+                "B) To execute a series of tasks without defining the objective or scope (requirements).",
+                "C) To carry out a set of activities with related inputs and outputs aimed at achieving objectives and goals linked to anticipated effects and impacts in a target population.",
+                "D) Project planning and management is not important as long as projects are started and completed."
+            ],
+            "correct_answer": "C",
+            "explanation": "Project planning and management at Dilla University aims to execute a set of activities with related inputs and outputs aimed at achieving objectives and goals linked to anticipated effects and impacts in a target population. (Page 2)",
+            "source": {
+                "page_number": 2,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q10",
+            "topic": "Project Definition",
+            "type": "MCQ",
+            "question": "What is the most distinguishing feature that all projects have in common?",
+            "options": [
+                "A) They are permanent endeavors",
+                "B) They have unlimited resources",
+                "C) They do not follow a planned, organized method to meet their objectives",
+                "D) All tasks within a project are independent"
+            ],
+            "correct_answer": "A",
+            "explanation": "All projects have a specific time frame which is their beginning and end. This trait helps identify what a project is. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q12",
+            "topic": "Project Methodology",
+            "type": "MCQ",
+            "question": "In which of the following scenarios does the temporary assemblage of key personnel to accomplish specific objectives with identifiable customers in mind most accurately represent a project?",
+            "options": [
+                "A) A department that has been operating for several years and handles ongoing tasks.",
+                "B) A task force assembled to address an emergency situation.",
+                "C) An annual company budget planning process.",
+                "D) A research project studying the effects of climate change over decades."
+            ],
+            "correct_answer": "B",
+            "explanation": "A temporary assemblage of key personnel is typically associated with a project, which has a specific start and end date. The task force assembled to address an emergency situation fits this description as it dissolves once the emergency is handled. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q13",
+            "topic": "Project Methodology",
+            "type": "MCQ",
+            "question": "What characteristic of a project ensures that it remains focused on achieving its specific objectives?",
+            "options": [
+                "A) The broad business objectives it covers.",
+                "B) Its indefinite time frame.",
+                "C) Its clear, definitive goal or requirements.",
+                "D) The size of the project team."
+            ],
+            "correct_answer": "C",
+            "explanation": "A clear, definitive goal or requirement ensures that a project remains focused on achieving its specific objectives by providing direction and purpose for the project team. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q14",
+            "topic": "Project Methodology",
+            "type": "MCQ",
+            "question": "Which of the following examples is MOST likely to become a program rather than a project?",
+            "options": [
+                "A) A short-term initiative to improve customer service.",
+                "B) An effort to expand the company's presence in a new market.",
+                "C) A project aimed at upgrading the company's IT infrastructure over the next 5 years.",
+                "D) A research study on the impact of changing weather patterns on agriculture."
+            ],
+            "correct_answer": "C",
+            "explanation": "An effort to upgrade the company's IT infrastructure over a five-year period is more likely to extend indefinitely and cover broader, less specific business objectives, making it a program rather than a project. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q15",
+            "topic": "Project Methodology",
+            "type": "MCQ",
+            "question": "What best describes a project according to the provided content?",
+            "options": [
+                "A) An ongoing, indefinite effort covering broad business objectives.",
+                "B) A permanent team assigned to complete specific tasks.",
+                "C) A fluid and change-embracing temporary group with identifiable customers and specific objectives.",
+                "D) A task without a clear, definitive goal."
+            ],
+            "correct_answer": "C",
+            "explanation": "The project is described as a fluid and change-embracing temporary group with identifiable customers and specific objectives. This makes option C the correct answer. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q16",
+            "topic": "Project Methodology",
+            "type": "MCQ",
+            "question": "Which of the following is not a characteristic of a project according to the provided content?",
+            "options": [
+                "A) It has a specific time frame.",
+                "B) It can extend indefinitely and cover broader, less specific business objectives.",
+                "C) It is managed by a permanent team.",
+                "D) It embraces change."
+            ],
+            "correct_answer": "B",
+            "explanation": "Projects are defined by having a specific time frame and being fluid and change-embracing. Option B, stating that projects can extend indefinitely, is incorrect according to the provided content. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q17",
+            "topic": "Project Methodology",
+            "type": "MCQ",
+            "question": "What happens to the project team when the objectives are met?",
+            "options": [
+                "A) The project team continues as a permanent team.",
+                "B) The project team dissolves.",
+                "C) The project team changes its objectives.",
+                "D) The project team becomes more complex."
+            ],
+            "correct_answer": "B",
+            "explanation": "The proj ect team dissolves once the objectives are met, according to the provided content. This makes option B the correct answer. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q18",
+            "topic": "Project Methodology",
+            "type": "MCQ",
+            "question": "What is the primary distinction between a project and an ongoing business operation?",
+            "options": [
+                "A) A project has a clear, definitive goal or objective, while a business operation does not.",
+                "B) An ongoing business operation has a beginning and an end, whereas a project is fluid and driven by specific needs.",
+                "C) A project is temporary, consisting of key personnel assembled to accomplish specific objectives, while a business operation lasts indefinitely.",
+                "D) Both projects and ongoing business operations are identical in nature and duration."
+            ],
+            "correct_answer": "A",
+            "explanation": "A project has a clear, definitive goal or objective, while an ongoing business operation does not. Projects are usually carried out to meet a specific need or accomplish a unique goal, whereas an ongoing business operation is a regular activity that continues indefinitely. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q19",
+            "topic": "Project Methodology",
+            "type": "MCQ",
+            "question": "Why might an effort called 'program' extend indefinitely and cover broader, less specific business objectives?",
+            "options": [
+                "A) Because the project team is unaware of its objectives.",
+                "B) The objectives are not clearly defined from the start.",
+                "C) Programs are usually ongoing activities that do not have a beginning or an end.",
+                "D) Programs cover broader, less specific business objectives than projects and may last indefinitely."
+            ],
+            "correct_answer": "D",
+            "explanation": "Programs are typically broader in scope and cover less specific business objectives. They may extend indefinitely because they address ongoing strategic or organizational goals, rather than the temporary, focused objectives of a project. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q20",
+            "topic": "Project Methodology",
+            "type": "MCQ",
+            "question": "Which of the following is NOT a common trait among all projects?",
+            "options": [
+                "A) A specific time frame",
+                "B) A clear, definitive goal or objective",
+                "C) Identifiable customers",
+                "D) The project team dissolves once the objectives are met."
+            ],
+            "correct_answer": "B",
+            "explanation": "While a clear, definitive goal or objective is common among many projects, it is NOT a trait that ALL projects have in common. Some projects may be undertaken for exploratory purposes without a clearly defined goal. (Page 1)",
+            "source": {
+                "page_number": 1,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q24",
+            "topic": "Project Impact On Target Population",
+            "type": "MCQ",
+            "question": "You are a project manager for an initiative aimed at reducing HIV transmission among young people in a community. Which of the following is NOT one of the key concepts you should be measuring during your project evaluation?",
+            "options": [
+                "A) Impact (reduction in HIV transmission rate)",
+                "B) Success (achievement of objectives, e.g., improved qualifications of high school teachers)",
+                "C) Monitoring (periodic checks to ensure progress towards goals)",
+                "D) Timeline (completion date of the project)"
+            ],
+            "correct_answer": "D",
+            "explanation": "While tracking the completion date is important for project management, it does not fall under the key concepts of evaluation. The focus should be on measuring success, monitoring progress, and impact. (Page 49)",
+            "source": {
+                "page_number": 49,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q25",
+            "topic": "Project Impact On Target Population",
+            "type": "MCQ",
+            "question": "Assume you are conducting an evaluation of your project years after its completion. This type of evaluation is known as:",
+            "options": [
+                "A) Mid-term evaluation",
+                "B) Final evaluation",
+                "C) External evaluation",
+                "D) Ex post evaluation"
+            ],
+            "correct_answer": "D",
+            "explanation": "Ex post evaluation is a type of evaluation conducted years after the completion of a project to assess its long-term impact. (Page 49)",
+            "source": {
+                "page_number": 49,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q26",
+            "topic": "Project Impact On Target Population",
+            "type": "MCQ",
+            "question": "Which of the following statements is true about planning for evaluation?",
+            "options": [
+                "A) Evaluation plans should not be started until after the needs assessment phase has been completed.",
+                "B) Only external evaluators can conduct evaluation plans.",
+                "C) Evaluation plans are similar to monitoring plans but focus more on the final outcome of the project.",
+                "D) Evaluation planning is not important as it is just an addition to the existing project plan."
+            ],
+            "correct_answer": "C",
+            "explanation": "Evaluation plans, like monitoring plans, should be started right from the beginning. They focus on assessing whether the project has contributed to the change in the situation of the problem it was trying to address. (Page 49)",
+            "source": {
+                "page_number": 49,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q27",
+            "topic": "Project Impact On Target Population",
+            "type": "MCQ",
+            "question": "What does 'objectives' refer to in the context of a project?",
+            "options": [
+                "A) The period during which the project is being implemented",
+                "B) The group or individuals that the project aims to impact",
+                "C) The evaluation conducted after the completion of the project",
+                "D) The reduction in a problem that the project addresses"
+            ],
+            "correct_answer": "B",
+            "explanation": "In this context, 'objectives' refer to the group or individuals that the project aims to impact. (Page 49) (Page 49)",
+            "source": {
+                "page_number": 49,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q28",
+            "topic": "Project Impact On Target Population",
+            "type": "MCQ",
+            "question": "When is it appropriate to evaluate a project?",
+            "options": [
+                "A) Only at the end of the project",
+                "B) Periodically during the implementation",
+                "C) After several years post-completion",
+                "D) Only by the donor or consultant"
+            ],
+            "correct_answer": "B",
+            "explanation": "Project evaluation can be conducted periodically during the implementation, at the end of the project (final evaluation), and years after the completion of the project (ex post evaluation). (Page 49) (Page 49)",
+            "source": {
+                "page_number": 49,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q29",
+            "topic": "Project Impact On Target Population",
+            "type": "MCQ",
+            "question": "What is the purpose of an 'impact' measurement in a project?",
+            "options": [
+                "A) To measure the reduction in a problem that the project addresses",
+                "B) To determine the group or individuals that the project aims to impact",
+                "C) To evaluate the period during which the project is being implemented",
+                "D) To plan for the evaluation of the project"
+            ],
+            "correct_answer": "A",
+            "explanation": "An 'impact' measurement in a project aims to determine whether or not the implementation of the project has contributed to the change in the situation of the problem it was trying to address. (Page 49) (Page 49)",
+            "source": {
+                "page_number": 49,
+                "confidence_score": 0.9
+            }
+        },
+        {
+            "id": "Q30",
+            "topic": "Project Impact On Target Population",
+            "type": "MCQ",
+            "question": "When is the ideal time to start evaluating a project's impact on its target population?",
+            "options": [
+                "A) Only at the end of the project",
+                "B) Periodically throughout the project",
+                "C) Just before the project starts",
+                "D) Immediately after the needs assessment"
+            ],
+            "correct_answer": "B",
+            "explanation": "The ideal time to start evaluating a project's impact is periodically throughout the project, as this allows for continuous monitoring and adjustment of strategies if necessary. (Page 49) (Page 49)",
+            "source": {
+                "page_number": 49,
+                "confidence_score": 0.9
+            }
+        }
+    ]
+}
