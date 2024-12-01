@@ -1,6 +1,6 @@
-# Project Management Book Question Generator
+# QnA Generator
 
-A sophisticated RAG-based system that automatically processes project management books to generate high-quality multiple-choice questions. This system leverages local Large Language Models through Ollama, combining the power of modern AI with efficient information retrieval to create educational content.
+A sophisticated RAG-based system that automatically processes project management books(specific just for this use case) to generate high-quality multiple-choice questions. This system leverages local Large Language Models through Ollama, combining the power of modern AI with efficient information retrieval to create educational content.
 
 ## Overview
 
