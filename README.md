@@ -74,7 +74,7 @@ The system's behavior can be customized through the `config/config.yaml` file:
 ```yaml
 # LLM Configuration
 llm:
-  model_name: "mixtral"  # Alternative: "llama2"
+  model_name: "mistral"  # Alternative: "llama2"
   temperature: 0.7      # Controls creativity (0.0-1.0)
   max_tokens: 2048      # Maximum response length
   context_window: 8192  # Context window size
